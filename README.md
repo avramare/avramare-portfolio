@@ -1,4 +1,4 @@
-# My Awesome Project
+# My Terminal Portfolio Project
 
 A brief description of what my awesome project does.
 
