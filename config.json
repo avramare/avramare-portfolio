@@ -1,21 +1,17 @@
 {
   "readmeUrl": "https://raw.githubusercontent.com/cveinnt/cveinnt/master/README.md",
-  "title": "LiveTerm",
-  "name": "John Doe",
-  "ascii": "liveterm",
+  "title": "MarkoAvram | Portfolio",
+  "name": "Marko Avram",
+  "ascii": "astralwaves",
   "social": {
-    "github": "github",
+    "github": "https://github.com/avramare",
     "linkedin": "linkedin"
   },
-  "email": "contact@email.com",
-  "ps1_hostname": "liveterm",
-  "ps1_username": "visitor",
-  "repo": "https://github.com/Cveinnt/LiveTerm",
-  "resume_url": "https://upload.wikimedia.org/wikipedia/commons/c/cc/Resume.pdf",
-  "donate_urls": {
-    "paypal": "https://paypal.me/cveinnt",
-    "patreon": "https://patreon.com/cveinnt"
-  },
+  "email": "markoavram94@outlook.com",
+  "ps1_hostname": "avramare-terminal-portfolio",
+  "ps1_username": "welcome visitor",
+  "repo": "https://github.com/avramare/avramare-portfolio",
+  "resume_url": "https://www.dropbox.com/scl/fi/vvs4u2vtbzmnhj67qz9uc/MarkoAvramCV.pdf?rlkey=2o91f0xhkpaze60pd7ckibd3n&st=967gx55r&dl=0",
   "colors": {
     "light": {
       "background": "#FBF1C9",
