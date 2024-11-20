@@ -3,6 +3,8 @@
 import * as bin from './index';
 import config from '../../../config.json';
 
+import HeadshotImg from '../../assets/Headshot.png';
+
 // Help
 export const help = async (args: string[]): Promise<string> => {
   const commands = Object.keys(bin).sort().join(', ');
@@ -44,13 +46,13 @@ export const resume = async (args: string[]): Promise<string> => {
 };
 
 // Donate
-export const donate = async (args: string[]): Promise<string> => {
-  return `thank you for your interest. 
-here are the ways you can support my work:
-- <u><a class="text-light-blue dark:text-dark-blue underline" href="${config.donate_urls.paypal}" target="_blank">paypal</a></u>
-- <u><a class="text-light-blue dark:text-dark-blue underline" href="${config.donate_urls.patreon}" target="_blank">patreon</a></u>
-`;
-};
+// export const donate = async (args: string[]): Promise<string> => {
+//   return `thank you for your interest. 
+// here are the ways you can support my work:
+// - <u><a class="text-light-blue dark:text-dark-blue underline" href="${config.donate_urls.paypal}" target="_blank">paypal</a></u>
+// - <u><a class="text-light-blue dark:text-dark-blue underline" href="${config.donate_urls.patreon}" target="_blank">patreon</a></u>
+// `;
+// };
 
 // Contact
 export const email = async (args: string[]): Promise<string> => {
@@ -141,14 +143,18 @@ export const sudo = async (args?: string[]): Promise<string> => {
 // Banner
 export const banner = (args?: string[]): string => {
   return `
+
+<div style="display: inline-flex; align-items: center;">
+<img style="margin-right: 2em;" src=${HeadshotImg.src} width="180px" />  
 ███╗   ███╗ █████╗ ██████╗ ██╗  ██╗ ██████╗      █████╗ ██╗   ██╗██████╗  █████╗ ███╗   ███╗
 ████╗ ████║██╔══██╗██╔══██╗██║ ██╔╝██╔═══██╗    ██╔══██╗██║   ██║██╔══██╗██╔══██╗████╗ ████║
 ██╔████╔██║███████║██████╔╝█████╔╝ ██║   ██║    ███████║██║   ██║██████╔╝███████║██╔████╔██║
 ██║╚██╔╝██║██╔══██║██╔══██╗██╔═██╗ ██║   ██║    ██╔══██║╚██╗ ██╔╝██╔══██╗██╔══██║██║╚██╔╝██║
 ██║ ╚═╝ ██║██║  ██║██║  ██║██║  ██╗╚██████╔╝    ██║  ██║ ╚████╔╝ ██║  ██║██║  ██║██║ ╚═╝ ██║
 ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝     ╚═╝  ╚═╝  ╚═══╝  ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝     ╚═╝
-                                                                                            
+</div>                                                                                            
 
+Type 'sumfetch' to display summary.
 Type 'help' to see the list of available commands.
 Type 'repo' or click <u><a class="text-light-blue dark:text-dark-blue underline" href="${config.repo}" target="_blank">here</a></u> for the Github repository.
 `;
