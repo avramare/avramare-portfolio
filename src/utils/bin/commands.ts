@@ -3,7 +3,7 @@
 import * as bin from './index';
 import config from '../../../config.json';
 
-import HeadshotImg from '../../assets/Headshot.png';
+import HeadshotImg from '../../assets/headshot.png';
 
 // Help
 export const help = async (args: string[]): Promise<string> => {
@@ -154,8 +154,9 @@ export const banner = (args?: string[]): string => {
 ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝     ╚═╝  ╚═╝  ╚═══╝  ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝     ╚═╝
 </div>                                                                                            
 
-Type 'sumfetch' to display summary.
-Type 'help' to see the list of available commands.
+Type 'sumfetch' to display short summary.
+Type 'resume' to get my latest resume.
 Type 'repo' or click <u><a class="text-light-blue dark:text-dark-blue underline" href="${config.repo}" target="_blank">here</a></u> for the Github repository.
+Type 'help' to see the list of available commands.
 `;
 };

@@ -1,6 +1,6 @@
 {
-  "readmeUrl": "https://raw.githubusercontent.com/cveinnt/cveinnt/master/README.md",
-  "title": "MarkoAvram | Portfolio",
+  "readmeUrl": "https://raw.githubusercontent.com/avramare/avramare/refs/heads/main/README.md",
+  "title": "Marko Avram | Portfolio",
   "name": "Marko Avram",
   "ascii": "avramare",
   "social": {
@@ -8,8 +8,8 @@
     "linkedin": "linkedin"
   },
   "email": "markoavram94@outlook.com",
-  "ps1_hostname": " marko-avram-portfolio",
-  "ps1_username": "welcome visitor ",
+  "ps1_hostname": "marko-avram-terminal-portfolio",
+  "ps1_username": "welcome",
   "repo": "https://github.com/avramare/avramare-portfolio",
   "resume_url": "https://www.dropbox.com/scl/fi/m08qxrobr2t5azur8cnyl/MarkoAvramCV.pdf?rlkey=pf7bbe5jkgwuw1mwqby4e7b17&st=hcp8rcfm&dl=0",
   "colors": {
@@ -22,7 +22,7 @@
       "blue": "#458588",
       "red": "#CA2124"
     },
-    "dark": {
+    "oldDark": {
       "background": "#2E3440",
       "foreground": "#E5E9F0",
       "yellow": "#5E81AC",
@@ -30,6 +30,15 @@
       "gray": "#88C0D0",
       "blue": "#EBCB8B",
       "red": "#BF616A"
+    },
+    "dark": {
+      "background": "#323232",
+      "foreground": "#E5E9F0",
+      "yellow": "#5E81AC",
+      "green": "#92ba6f",
+      "gray": "#88C0D0",
+      "blue": "#EBCB8B",
+      "red": "#c65460"
     }
   }
 }
