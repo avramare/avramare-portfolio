@@ -4,4 +4,4 @@ Highly customizable, easy-to-use, and minimal terminal styled website template, 
 
 ## Contact
 
-Marko Avram - [Your Email](mailto:markoavram94@outlook.com)
+Marko Avram - (mailto:markoavram94@outlook.com)
