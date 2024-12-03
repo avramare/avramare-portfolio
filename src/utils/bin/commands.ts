@@ -111,8 +111,7 @@ directories`;
 };
 
 export const cd = async (args: string[]): Promise<string> => {
-  return `unfortunately, i cannot afford more directories.
-if you hire me, maybe I could afford it :)`;
+  return `unfortunately, i cannot afford more directories, maybe if you hire me, i'll think about it :)`;
 };
 
 export const date = async (args: string[]): Promise<string> => {
