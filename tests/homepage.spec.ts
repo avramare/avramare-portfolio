@@ -23,7 +23,5 @@ test('homepage should load', async ({ page }) => {
   await page.locator('label').getByText('marko-avram-terminal-portfolio').click();
   await page.locator('label').getByText(':$ ~').click();
   await page.getByLabel('welcome@marko-avram-terminal-').click();
-  await page.locator('.overflow-y-auto').click();
-
 
 });
