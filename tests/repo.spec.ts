@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-test('repo cmd test and link opening', async ({ page }) => {
+test('repo link opening', async ({ page }) => {
   
   //loading the page
   await page.goto('/');
@@ -17,8 +17,8 @@ test('repo cmd test and link opening', async ({ page }) => {
   await page.getByLabel('welcome@marko-avram-terminal-').click();
   await page.getByLabel('welcome@marko-avram-terminal-').press('Enter');
   
-  // repo command respond, link opened and response visible
-  await expect(page.getByText('Opening Github repository...')).toBeVisible();
+  // repo command link opened and response visible
+  await page.getByText('Opening Github repository...').click();
   
   
 });
