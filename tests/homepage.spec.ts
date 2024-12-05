@@ -1,9 +1,9 @@
 import { test, expect } from '@playwright/test';
 
 test('homepage should load', async ({ page }) => {
-  
+
   //loading the page
-  await page.goto('/');
+  await page.goto('https://marko-avram-terminal-portfolio.vercel.app/');
 
   //loading homepage element and first response
   await page.getByText('welcome').first().click();
