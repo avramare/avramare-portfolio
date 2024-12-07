@@ -179,10 +179,11 @@ export const morse = async (args: string[]): Promise<string> => {
   // If no arguments, show help
   if (args.length === 0) {
     return `Morse Code Converter
-Usage: 
+Usage:
 - 'morse encode <text>' - Convert text to Morse code
 - 'morse decode <morse>' - Convert Morse code to text
-- 'morse help' - Show this help message`;
+- 'morse help' - Encoding and Decoding example for HELLO WORLD 
+`;
   }
 
   // Handle different subcommands
