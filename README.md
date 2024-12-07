@@ -3,21 +3,18 @@
 Highly customizable, easy-to-use, and minimal terminal styled website template, powered by Next.js.
 - **LiveTerm**: The foundation of this project. [GitHub Repository](https://github.com/Cveinnt/LiveTerm)
 
+
+
+
 🌐 LOST IN TRANSLATION? FEAR THE MORSE! 🌐
 
 Introducing the ULTIMATE Communication Time Machine:
-
-M   M  OOO  RRRR   SSS  EEEE
-MM MM O   O R   R S     E   
-M M M O   O RRRR   SSS  EEE 
-M   M O   O R R       S E   
-M   M  OOO  R  RR SSSS  EEEE
-
-
 Type 'morse help' and become a COMMUNICATION WIZARD! ✨
- 
-
 ---------------------------------------------------
+📡 FEATURES THAT'LL MAKE MARCONI PROUD:
+- Transform your boring text into BEEP-TASTIC communication
+- Decode mysterious signals like a digital Indiana Jones
+- Impress (or confuse) your friends with 19th-century swagger
 
 🤓 NERD ALERT: Now you can communicate like:
 - Old-school telegraphers
