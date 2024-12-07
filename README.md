@@ -8,8 +8,8 @@ Highly customizable, easy-to-use, and minimal terminal styled website template, 
 
 🌐 LOST IN TRANSLATION? FEAR THE MORSE! 🌐
 
-Introducing the ULTIMATE Communication Time Machine:
 Type 'morse help' and become a COMMUNICATION WIZARD! ✨
+
 ---------------------------------------------------
 📡 FEATURES THAT'LL MAKE MARCONI PROUD:
 - Transform your boring text into BEEP-TASTIC communication
