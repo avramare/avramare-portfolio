@@ -1,22 +1,18 @@
 import { test, expect } from '@playwright/test';
 
-test('help cmd should display all avaible commands', async ({ page }) => {
-  //loading the page
+test('help command shows avaible commands', async ({ page }) => {
+  // Navigate to the page
   await page.goto('https://marko-avram-terminal-portfolio.vercel.app/');
 
-  // //locating command line
-  // await page.locator('label').getByText('welcome').click();
-  // await page.locator('label').getByText('@').click();
-  // await page.locator('label').getByText('marko-avram-terminal-portfolio').click();
-  // await page.locator('label').getByText(':$ ~').click();
-
-  //passing help command
-  await page.getByLabel('welcome@marko-avram-terminal-').click();
-  await page.getByLabel('welcome@marko-avram-terminal-').fill('help');
-  await page.getByLabel('welcome@marko-avram-terminal-').click();
-  await page.getByLabel('welcome@marko-avram-terminal-').press('Enter');
-
-  //all avaible commmands will be desplayed
-  await expect(page.getByText('Welcome! Here are all the')).toBeVisible({ timeout: 10000 });
-
+  // Input
+  const commandInput = page.getByRole('textbox', { name: /welcome@marko-avram-terminal-/i });
+  
+  // Type and submit command
+  await commandInput.click();
+  await commandInput.fill('help');
+  await commandInput.press('Enter');
+  
+  // Response with assertions
+  await expect(page.getByText('Welcome! Here are all the', { exact: false }))
+    .toBeVisible({ timeout: 5000 });
 });

@@ -1,22 +1,18 @@
 import { test, expect } from '@playwright/test';
 
-test('sumfetch cmd test should display summary', async ({ page }) => {
-  //loading the page
+test('sumfetch command should display summary', async ({ page }) => {
+  // Navigate to the page
   await page.goto('https://marko-avram-terminal-portfolio.vercel.app/');
 
-  //locating the command line
-  // await page.locator('label').getByText('welcome').click();
-  // await page.locator('label').getByText('@').click();
-  // await page.locator('label').getByText('marko-avram-terminal-portfolio').click();
-  // await page.locator('label').getByText(':$ ~').click();
-
-  //passing sumfetch cmd
-  await page.getByLabel('welcome@marko-avram-terminal-').click();
-  await page.getByLabel('welcome@marko-avram-terminal-').fill('sumfetch');
-  await page.getByLabel('welcome@marko-avram-terminal-').click();
-  await page.getByLabel('welcome@marko-avram-terminal-').press('Enter');
-
-  //sumfetch cmd response, sumfetch displayed
-  await expect(page.getByText('@@@@@@@@@@@@@  sumfetch:')).toBeVisible({ timeout: 10000 });
-
+  // Input
+  const commandInput = page.getByRole('textbox', { name: /welcome@marko-avram-terminal-/i });
+  
+  // Type and submit command
+  await commandInput.click();
+  await commandInput.fill('sumfetch');
+  await commandInput.press('Enter');
+  
+  // Response with assertions
+  await expect(page.getByText('@@@@@@@@@@@@@  sumfetch:', { exact: false }))
+    .toBeVisible({ timeout: 5000 });
 });
