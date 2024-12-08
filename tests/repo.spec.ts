@@ -18,6 +18,6 @@ test('repo link opening', async ({ page }) => {
   await page.getByLabel('welcome@marko-avram-terminal-').press('Enter');
   
   // repo command link opened and response visible
-  await page.getByText('Opening Github repository...');  
+  await expect(page.getByText('Opening Github repository...')).toBeVisible();  
   
 });

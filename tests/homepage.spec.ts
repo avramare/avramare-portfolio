@@ -24,4 +24,7 @@ test('homepage should load', async ({ page }) => {
   await page.locator('label').getByText(':$ ~').click();
   await page.getByLabel('welcome@marko-avram-terminal-').click();
 
+  //
+  await expect (page.getByRole('paragraph')).toBeVisible();
+
 });

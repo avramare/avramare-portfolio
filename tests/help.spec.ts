@@ -17,6 +17,6 @@ test('help cmd should display all avaible commands', async ({ page }) => {
   await page.getByLabel('welcome@marko-avram-terminal-').press('Enter');
 
   //all avaible commmands will be desplayed
-  await page.getByText('Welcome! Here are all the');
+  await expect(page.getByText('Welcome! Here are all the')).toBeVisible();
 
 });
