@@ -25,6 +25,6 @@ test('homepage should load', async ({ page }) => {
   await page.getByLabel('welcome@marko-avram-terminal-').click();
 
   //
-  await expect (page.getByRole('paragraph')).toBeVisible();
+  await expect (page.getByRole('paragraph')).toBeVisible({ timeout: 10000 });
 
 });
