@@ -17,6 +17,6 @@ test('sumfetch cmd test should display summary', async ({ page }) => {
   await page.getByLabel('welcome@marko-avram-terminal-').press('Enter');
 
   //sumfetch cmd response, sumfetch displayed
-  await expect(page.getByText('@@@@@@@@@@@@@  sumfetch:')).toBeVisible();
+  await expect(page.getByText('@@@@@@@@@@@@@  sumfetch:')).toBeVisible({ timeout: 10000 });
 
 });

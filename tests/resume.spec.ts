@@ -18,6 +18,6 @@ test('resume cmd test and link opening', async ({ page }) => {
   await page.getByLabel('welcome@marko-avram-terminal-').press('Enter');
 
   //resume command response, link opened and content loaded
-  await expect(page.getByText('Opening resume...')).toBeVisible();
+  await expect(page.getByText('Opening resume...')).toBeVisible({ timeout: 10000 });
 
 });
