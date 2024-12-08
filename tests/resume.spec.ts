@@ -13,6 +13,6 @@ test('repo command opens GitHub repository', async ({ page }) => {
   await commandInput.press('Enter');
   
   // Response with assertions
-  await expect(page.getByText('Opening...', { exact: false }))
+  await expect(page.getByText('Opening resume...', { exact: false }))
     .toBeVisible({ timeout: 5000 });
 });
