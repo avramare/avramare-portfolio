@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-test('repo command opens GitHub repository', async ({ page }) => {
+test('resume command opens GitHub repository', async ({ page }) => {
   // Navigate to the page
   await page.goto('https://marko-avram-terminal-portfolio.vercel.app/');
 
