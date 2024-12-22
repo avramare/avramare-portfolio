@@ -204,7 +204,7 @@ export const sudo = async (args?: string[]): Promise<string> => {
 export const banner = (args?: string[]): string => {
   return `
 
-<div style="display: inline-flex; align-items: center;">
+<div id="banner" style="display: inline-flex; align-items: center;">
 <img style="margin-right: 2em;" src=${HeadshotImg.src} width="180px" />  
 ███╗   ███╗ █████╗ ██████╗ ██╗  ██╗ ██████╗      █████╗ ██╗   ██╗██████╗  █████╗ ███╗   ███╗
 ████╗ ████║██╔══██╗██╔══██╗██║ ██╔╝██╔═══██╗    ██╔══██╗██║   ██║██╔══██╗██╔══██╗████╗ ████║
