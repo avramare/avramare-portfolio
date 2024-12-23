@@ -32,12 +32,16 @@ export const repo = async (args: string[]): Promise<string> => {
 
 // About
 export const about = async (args: string[]): Promise<string> => {
-  return `Hi, I am ${config.name}. 
-Welcome to my website!
-More about me:
-'sumfetch' - short summary.
-'resume' - my latest resume.
-'readme' - my github readme.`;
+  return `
+  Hi, I am ${config.name}, a dedicated self-thought developer and tester.  
+  With a passion for databases, testing, and innovative software solutions, I've been on this quest for over three years now.
+
+  Who knows where this journey will take me next? ⛵
+
+  More about me:
+  'sumfetch' - short summary.
+  'resume' - my latest resume.
+  'github' - my github profile.`;
 };
 
 export const resume = async (args: string[]): Promise<string> => {
@@ -102,13 +106,13 @@ export const whoami = async (args: string[]): Promise<string> => {
   return `${config.ps1_username}`;
 };
 
-export const ls = async (args: string[]): Promise<string> => {
-  return `a
-bunch
-of
-fake
-directories`;
-};
+// export const ls = async (args: string[]): Promise<string> => {
+//   return `a
+// bunch
+// of
+// fake
+// directories`;
+// };
 
 export const cd = async (args: string[]): Promise<string> => {
   return `
@@ -225,14 +229,14 @@ Type 'help' to see the list of available commands.
 
 // Morse Code Conversion Utility
 const morseCodeMap: { [key: string]: string } = {
-  'A': '.-', 'B': '-...', 'C': '-.-.', 'D': '-..', 'E': '.', 
-  'F': '..-.', 'G': '--.', 'H': '....', 'I': '..', 'J': '.---', 
-  'K': '-.-', 'L': '.-..', 'M': '--', 'N': '-.', 'O': '---', 
-  'P': '.--.', 'Q': '--.-', 'R': '.-.', 'S': '...', 'T': '-', 
-  'U': '..-', 'V': '...-', 'W': '.--', 'X': '-..-', 'Y': '-.--', 
-  'Z': '--..', '0': '-----', '1': '.----', '2': '..---', 
-  '3': '...--', '4': '....-', '5': '.....', '6': '-....', 
-  '7': '--...', '8': '---..', '9': '----.', 
+  'A': '.-', 'B': '-...', 'C': '-.-.', 'D': '-..', 'E': '.',
+  'F': '..-.', 'G': '--.', 'H': '....', 'I': '..', 'J': '.---',
+  'K': '-.-', 'L': '.-..', 'M': '--', 'N': '-.', 'O': '---',
+  'P': '.--.', 'Q': '--.-', 'R': '.-.', 'S': '...', 'T': '-',
+  'U': '..-', 'V': '...-', 'W': '.--', 'X': '-..-', 'Y': '-.--',
+  'Z': '--..', '0': '-----', '1': '.----', '2': '..---',
+  '3': '...--', '4': '....-', '5': '.....', '6': '-....',
+  '7': '--...', '8': '---..', '9': '----.',
   ' ': '/'
 };
 
