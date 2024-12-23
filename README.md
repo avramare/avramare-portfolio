@@ -44,12 +44,12 @@ Highly customizable, easy-to-use terminal styled portfolio page, powered by intu
 | `whoami`    | Outputs the current logged-in username.                    |
 
 
-### Type 'morse' and become a COMMUNICATION WIZARD! ✨
+### Type 'morse' and become a COMMUNICATION WIZARD!🕵
 
 
 
 
-🕵 FEATURES THAT'LL MAKE [MARCONI](https://en.wikipedia.org/wiki/Guglielmo_Marconi) PROUD:
+📡 FEATURES THAT'LL MAKE [MARCONI](https://en.wikipedia.org/wiki/Guglielmo_Marconi) PROUD:
 - Transform your boring text into BEEP-TASTIC communication
 - Decode mysterious signals like a digital Indiana Jones
 - Impress (or confuse) your friends with 19th-century swagger
