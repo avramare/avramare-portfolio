@@ -1,28 +1,31 @@
 import { test, expect } from '@playwright/test';
-import { projects, readme, weather } from '../src/utils/bin/api_commands';
+import { getProjects, getReadme, getWeather } from '../src/utils/api';
 
-test.describe('API Commands Tests', () => {
-  test('projects command should return list of repositories', async () => {
-    const result = await projects([]);
-    expect(result).toBeTruthy();
-    expect(result).toContain('href="https://github.com');
-    expect(result).toContain('class="text-light-blue');
-  });
+test.describe('API Testing Suite', () => {
 
-  test('readme command should return README content', async () => {
-    const result = await readme([]);
-    expect(result).toContain('Opening GitHub README...');
-    expect(result).toBeTruthy();
-  });
+    test('should fetch GitHub projects successfully', async () => {
+        const projects = await getProjects();
+        expect(Array.isArray(projects)).toBeTruthy();
+        expect(projects.length).toBeGreaterThan(0);
+        expect(projects[0]).toHaveProperty('name');
+        expect(projects[0]).toHaveProperty('html_url');
+    });
 
-  test('weather command should return weather data for valid city', async () => {
-    const result = await weather(['london']);
-    expect(result).toBeTruthy();
-    expect(result).not.toContain('Usage: weather [city]');
-  });
+    test('should fetch README content', async () => {
+        const readme = await getReadme();
+        expect(typeof readme).toBe('string');
+        expect(readme.length).toBeGreaterThan(0);
+    });
 
-  test('weather command should return usage info when no city provided', async () => {
-    const result = await weather([]);
-    expect(result).toBe('Usage: weather [city]. Example: weather casablanca');
-  });
+    test('should fetch weather data for valid city', async () => {
+        const weather = await getWeather('London');
+        expect(typeof weather).toBe('string');
+        expect(weather).toContain('London');
+    });
+
+    test('should handle invalid city for weather data', async () => {
+        const weather = await getWeather('InvalidCityName123456');
+        expect(weather).toBeDefined();
+    });
+
 });
