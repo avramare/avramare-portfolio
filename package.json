@@ -17,7 +17,7 @@
   "dependencies": {
     "axios": "^0.27.2",
     "dotenv": "^16.4.5",
-    "next": "12.1.6",
+    "next": "14.2.21",
     "react": "18.1.0",
     "react-dom": "18.1.0",
     "react-icons": "^4.3.1"
