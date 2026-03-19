@@ -213,7 +213,7 @@ export const banner = (args?: string[]): string => {
 </div>                                                                                            
 
 <div style="margin-top: 1em; font-size: 1.2em;">
-I live at intersection of user experience and system failure. I stress the backend, poke the UI and automate the chaos so your users never have to experience it.
+I live at the crossroads of user experience and system failure. I stress the backend, poke the UI and automate the chaos so your users never have to experience it.
 </div>
 
 <div style="font-size: 0.9em;">
