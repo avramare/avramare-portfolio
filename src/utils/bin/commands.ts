@@ -215,11 +215,8 @@ export const banner = (args?: string[]): string => {
 <div style="margin-top: 1em; font-size: 1.2em;">
 I live at the crossroads of user experience and system failure. I stress the backend, poke the UI and automate the chaos so your users never have to experience it.
 </div>
-
-<div style="font-size: 0.9em;">
-Hey, there! If you want to know more about me, just type 'about' and hit enter.
-
-Here are some quick commands to get you started:
+<div style="font-size: 1.1em;">
+Type '?' or 'help' to view a list of available commands.
 
 $ sumfetch - summary of who I am and what I do
 $ resume -  download my resume
