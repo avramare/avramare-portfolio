@@ -21,21 +21,79 @@ div#__next > div {
   overflow: auto;
 }
 
+/* Desktop background */
+.terminal-desktop {
+  background-color: #0a0a0a;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 24px 24px;
+  min-height: 100%;
+}
+
+/* Terminal window chrome */
+.terminal-window {
+  box-shadow:
+    0 0 0 1px rgba(94, 129, 172, 0.3),
+    0 0 50px rgba(94, 129, 172, 0.07),
+    0 30px 80px rgba(0, 0, 0, 0.75);
+}
+
+/* Title bar */
+.terminal-titlebar {
+  background-color: #252525;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  user-select: none;
+}
+
+.terminal-title-text {
+  color: #5a5a5a;
+  letter-spacing: 0.02em;
+}
+
+/* Traffic light buttons */
+.traffic-red    { background-color: #ff5f57; }
+.traffic-yellow { background-color: #febc2e; }
+.traffic-green  { background-color: #28c840; }
+
+/* Input cursor */
+#prompt {
+  caret-color: #92ba6f;
+}
+
+/* Subtle scanline overlay on the content area */
+.terminal-window > div:last-child {
+  position: relative;
+}
+
+.terminal-window > div:last-child::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 3px,
+    rgba(0, 0, 0, 0.025) 3px,
+    rgba(0, 0, 0, 0.025) 4px
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Scrollbar */
 ::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
+  width: 8px;
+  height: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #1e252e;
-  border-radius: 5px;
+  background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #ebdbb2;
-  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #ff8037;
+  background: rgba(255, 255, 255, 0.2);
 }
