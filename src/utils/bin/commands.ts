@@ -7,13 +7,14 @@ import HeadshotImg from '../../assets/headshot.png';
 
 // Help
 export const help = async (args: string[]): Promise<string> => {
-  const commands = Object.keys(bin).sort().join(', ');
-  var c = '';
-  for (let i = 1; i <= Object.keys(bin).sort().length; i++) {
+  // const commands = Object.keys(bin).sort().join(', '); // unused: was never referenced below
+  const sortedKeys = Object.keys(bin).sort();
+  let c = '';
+  for (let i = 1; i <= sortedKeys.length; i++) {
     if (i % 7 === 0) {
-      c += Object.keys(bin).sort()[i - 1] + '\n';
+      c += sortedKeys[i - 1] + '\n';
     } else {
-      c += Object.keys(bin).sort()[i - 1] + ' ';
+      c += sortedKeys[i - 1] + ' ';
     }
   }
   return `Welcome! Here are all the available commands:

@@ -1,4 +1,4 @@
-// // List of commands that require API calls
+// List of commands that require API calls
 
 import { getProjects } from '../api';
 // import { getQuote } from '../api';
