@@ -37,7 +37,7 @@ export const Input = ({
       handleTabCompletion(command, setCommand);
     }
 
-    if (event.key === 'Enter' || event.code === '13') {
+    if (event.key === 'Enter' /* || event.code === '13' — dead: KeyboardEvent.code is never a numeric string */) {
       event.preventDefault();
       setLastCommandIndex(0);
       await shell(command, setHistory, clearHistory, setCommand);

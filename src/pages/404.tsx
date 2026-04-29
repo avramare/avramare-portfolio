@@ -6,7 +6,7 @@ const NotFoundPage = () => {
 
   React.useEffect(() => {
     router.replace('/');
-  });
+  }, []);
 
   return null;
 };

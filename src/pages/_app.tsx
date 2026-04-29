@@ -13,11 +13,11 @@ const App = ({ Component, pageProps }) => {
   return (
     <>
       <Head>
+        {/* maximum-scale="1" removed: invalid JSX prop (must go in content string) and blocks user zoom (WCAG 1.4.4) */}
         <meta
           name="viewport"
           content="initial-scale=1.0, width=device-width"
           key="viewport"
-          maximum-scale="1"
         />
       </Head>
 
