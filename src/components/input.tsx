@@ -3,6 +3,19 @@ import { commandExists } from '../utils/commandExists';
 import { shell } from '../utils/shell';
 import { handleTabCompletion } from '../utils/tabCompletion';
 import { Ps1 } from './Ps1';
+import { History as HistoryInterface } from './history/interface';
+
+interface InputProps {
+  inputRef: React.RefObject<HTMLInputElement>;
+  containerRef: React.RefObject<HTMLDivElement>;
+  command: string;
+  history: Array<HistoryInterface>;
+  lastCommandIndex: number;
+  setCommand: React.Dispatch<React.SetStateAction<string>>;
+  setHistory: (value: string) => void;
+  setLastCommandIndex: React.Dispatch<React.SetStateAction<number>>;
+  clearHistory: () => void;
+}
 
 export const Input = ({
   inputRef,
@@ -14,9 +27,9 @@ export const Input = ({
   setHistory,
   setLastCommandIndex,
   clearHistory,
-}) => {
+}: InputProps) => {
   const onSubmit = async (event: React.KeyboardEvent<HTMLInputElement>) => {
-    const commands: [string] = history
+    const commands: string[] = history
       .map(({ command }) => command)
       .filter((command: string) => command);
 
@@ -37,7 +50,7 @@ export const Input = ({
       handleTabCompletion(command, setCommand);
     }
 
-    if (event.key === 'Enter' /* || event.code === '13' — dead: KeyboardEvent.code is never a numeric string */) {
+    if (event.key === 'Enter') {
       event.preventDefault();
       setLastCommandIndex(0);
       await shell(command, setHistory, clearHistory, setCommand);
