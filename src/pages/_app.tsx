@@ -8,7 +8,7 @@ const App = ({ Component, pageProps }: AppProps) => {
   const inputRef = React.useRef<HTMLInputElement>(null);
 
   const onClickAnywhere = () => {
-    inputRef.current.focus();
+    inputRef.current?.focus();
   };
 
   return (

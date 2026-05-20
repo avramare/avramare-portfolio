@@ -107,9 +107,11 @@ Final `compilerOptions` block:
   "moduleResolution": "bundler",
   "resolveJsonModule": true,
   "isolatedModules": true,
-  "jsx": "react-jsx"
+  "jsx": "preserve"
 }
 ```
+
+Note: `next build` auto-sets `jsx` to `"preserve"` for Next.js 14 (SWC handles the transform). If you set `"react-jsx"` Next.js will overwrite it on the next build.
 
 - [ ] **Step 2: Verify TypeScript accepts the config**
 
