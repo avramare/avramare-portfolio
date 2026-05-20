@@ -1,9 +1,10 @@
 import React from 'react';
 import '../styles/global.css';
 import Head from 'next/head';
+import type { AppProps } from 'next/app';
 import config from '../../config.json';
 
-const App = ({ Component, pageProps }) => {
+const App = ({ Component, pageProps }: AppProps) => {
   const inputRef = React.useRef<HTMLInputElement>(null);
 
   const onClickAnywhere = () => {
