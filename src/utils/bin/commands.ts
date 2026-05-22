@@ -201,17 +201,30 @@ export const cd = async (args: string[]): Promise<string> => {
 
 // Banner
 export const banner = (args?: string[]): string => {
-  return `
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
 
-<div id="banner" style="display: inline-flex; align-items: center;">
-<img style="margin-right: 2em;" src=${HeadshotImg.src} width="180px" />  
+  const bannerTop = isMobile
+    ? `<div id="banner" style="display: flex; flex-direction: column; align-items: center; gap: 0.75em;">
+<img src=${HeadshotImg.src} width="120px" />
+███╗   ███╗ █████╗
+████╗ ████║██╔══██╗
+██╔████╔██║███████║
+██║╚██╔╝██║██╔══██║
+██║ ╚═╝ ██║██║  ██║
+╚═╝     ╚═╝╚═╝  ╚═╝
+</div>`
+    : `<div id="banner" style="display: inline-flex; align-items: center;">
+<img style="margin-right: 2em;" src=${HeadshotImg.src} width="180px" />
 ███╗   ███╗ █████╗ ██████╗ ██╗  ██╗ ██████╗      █████╗ ██╗   ██╗██████╗  █████╗ ███╗   ███╗
 ████╗ ████║██╔══██╗██╔══██╗██║ ██╔╝██╔═══██╗    ██╔══██╗██║   ██║██╔══██╗██╔══██╗████╗ ████║
 ██╔████╔██║███████║██████╔╝█████╔╝ ██║   ██║    ███████║██║   ██║██████╔╝███████║██╔████╔██║
 ██║╚██╔╝██║██╔══██║██╔══██╗██╔═██╗ ██║   ██║    ██╔══██║╚██╗ ██╔╝██╔══██╗██╔══██║██║╚██╔╝██║
 ██║ ╚═╝ ██║██║  ██║██║  ██║██║  ██╗╚██████╔╝    ██║  ██║ ╚████╔╝ ██║  ██║██║  ██║██║ ╚═╝ ██║
 ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝     ╚═╝  ╚═╝  ╚═══╝  ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝     ╚═╝
-</div>                                                                                            
+</div>`;
+
+  return `
+${bannerTop}
 
 <div style="margin-top: 1em; font-size: 1.2em; align-items: center; display: inline-flex;">
 I live at the crossroads of user experience and system failure. Often stress the backend, poke the UI and automate the chaos so your users never have to experience it.
