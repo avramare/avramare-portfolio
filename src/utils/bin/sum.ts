@@ -1,9 +1,9 @@
 import config from '../../../config.json';
 
-const sumfetch = async (args: string[]): Promise<string> => {
+const sum = async (args: string[]): Promise<string> => {
   if (config.ascii === 'avramare') {
     return `                                                  
-             @@@@@@@@@@@@@                   sumfetch: short summary display
+             @@@@@@@@@@@@@                   sum: short summary display
         @@@@               @@@@             -----------
       @@                       @@            ABOUT
     @@                           @@          ${config.name}
@@ -23,7 +23,7 @@ const sumfetch = async (args: string[]): Promise<string> => {
 `;
   } else {
     return `
-           ▄▓▓▓▓▓▓▓▓▓▓▓▓▓▓▄                  sumfetch
+           ▄▓▓▓▓▓▓▓▓▓▓▓▓▓▓▄                  sum:  short summary display  
         ▄▓▓▀ ▄▓▓▀▓▓▓▀▓▓▄ ▀▀▓▓▄              -----------
       ▓▓▀  ▄▓▀   ▐▓▓  ▀▓▓    ▓▓▄             ABOUT
     ▄▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓            ${config.name}
@@ -43,4 +43,4 @@ const sumfetch = async (args: string[]): Promise<string> => {
   }
 };
 
-export default sumfetch;
+export default sum;

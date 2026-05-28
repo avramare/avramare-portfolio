@@ -30,6 +30,10 @@ yarn-error.log*
 # vercel
 .vercel
 
+# superpowers
+.claude
+docs
+
 # typescript
 *.tsbuildinfo
 

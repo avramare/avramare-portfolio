@@ -1,11 +1,11 @@
 {
-  "name": "liveterm",
-  "version": "0.1.0",
+  "name": "avramare",
+  "version": "0.2.0",
   "license": "MIT",
   "author": {
-    "name": "Vincent Wu",
-    "url": "https://cveinnt.com",
-    "email": "contact@wensenwu.com"
+    "name": "Marko Avram",
+    "url": "https://avramare.is-not-a.dev/",
+    "email": "avramare@outlook.com"
   },
   "scripts": {
     "dev": "next dev",
@@ -17,13 +17,12 @@
   "dependencies": {
     "axios": "^1.15.0",
     "dotenv": "^16.4.5",
-    "next": "^14.2.0",
+    "next": "^16.2.6",
     "react": "^18.3.0",
     "react-dom": "^18.3.0",
     "react-icons": "^4.3.1"
   },
   "devDependencies": {
-    "@playwright/test": "^1.49.0",
     "@types/node": "^20.0.0",
     "@types/react": "^18.3.0",
     "@types/react-dom": "^18.3.0",
@@ -31,7 +30,7 @@
     "@typescript-eslint/parser": "^5.23.0",
     "autoprefixer": "^10.4.7",
     "eslint": "8.15.0",
-    "eslint-config-next": "^14.2.0",
+    "eslint-config-next": "^16.2.6",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.29.4",
     "husky": "^8.0.1",

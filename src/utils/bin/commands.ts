@@ -32,21 +32,24 @@ export const repo = async (args: string[]): Promise<string> => {
 
 // About
 export const about = async (args: string[]): Promise<string> => {
-  return `
+  return `<div id="about" style="display: flex; flex-direction: column; gap: 1em;">
   
-Hi, I'm Marko — a QA Engineer based in Sarajevo whose job is essentially to break things for a living, and somehow get paid for it. I talk to software until it confesses its bugs, and trust me, they always do. With 3+ years of experience, I've poked holes in Microsoft's platform, identified 100+ unsupported features, which is a polite way of saying I found a lot of problems.
+Hi, I'm Marko — a QA Engineer based in Sarajevo whose job is essentially to break things for a living, and somehow get paid for it. I talk to software until it confesses its bugs, and trust me, they always do. With 4+ years of experience, I've poked holes in Microsoft's platform, identified 100+ unsupported features, which is a polite way of saying I found a lot of problems.
 
 
 I work with Playwright, SQL, TypeScript, and an unhealthy obsession with edge cases that nobody else thought to test. I write test cases the way other people write grocery lists: obsessively and with way too much detail.
 If your software has a dark corner, I will find it, document it, and hand the developer a very politely worded, extremely detailed report about why their code is — respectfully, not perfect.
 
 Beyond my professional roles, I am a perpetual student of technology, maintaining a presence in the open-source community. Also i love gaming and comedy, so if you have any recommendations for either, I'm all ears!
+</div>
 
 Lets connect!
 
 $ email - shoot me an email
 $ github - check my github
-$ linkedin - see my professional profile`;
+$ linkedin - see my professional profile
+
+`;
 };
 
 export const resume = async (args: string[]): Promise<string> => {
@@ -226,14 +229,15 @@ export const banner = (args?: string[]): string => {
   return `
 ${bannerTop}
 
-<div style="margin-top: 1em; font-size: 1.2em; align-items: center; display: inline-flex;">
+<div style="margin-top: 0.5em; font-size: 1em; align-items: center; display: inline-flex;">
 I live at the crossroads of user experience and system failure. Often stress the backend, poke the UI and automate the chaos so your users never have to experience it.
 </div>
 
-<div style="font-size: 0.9em;">
-Hey, there! If you want to know more about me, just type 'about'
+<div style="font-size: 1em;">
+Hi there! Here are some commands to get you started:
 
-$ sumfetch - summary of who I am and what I do
+$ about - learn more about me
+$ sum - short summary display
 $ resume -  download my resume
 $ help - list of available commands
 </div>
