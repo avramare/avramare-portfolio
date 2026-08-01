@@ -3,8 +3,6 @@
 import * as bin from './index';
 import config from '../../../config.json';
 
-import HeadshotImg from '../../assets/headshot.png';
-
 // Help
 export const help = async (args: string[]): Promise<string> => {
   // const commands = Object.keys(bin).sort().join(', '); // unused: was never referenced below
@@ -113,41 +111,45 @@ export const cd = async (args: string[]): Promise<string> => {
 export const banner = (args?: string[]): string => {
   const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
 
-  const bannerTop = isMobile
-    ? `<div id="banner" style="display: flex; flex-direction: column; align-items: center; gap: 0.75em;">
-<img src=${HeadshotImg.src} width="120px" />
-███╗   ███╗ █████╗
-████╗ ████║██╔══██╗
-██╔████╔██║███████║
-██║╚██╔╝██║██╔══██║
-██║ ╚═╝ ██║██║  ██║
-╚═╝     ╚═╝╚═╝  ╚═╝
-</div>`
-    : `<div id="banner" style="display: inline-flex; align-items: center;">
-<img style="margin-right: 2em;" src=${HeadshotImg.src} width="180px" />
-███╗   ███╗ █████╗ ██████╗ ██╗  ██╗ ██████╗      █████╗ ██╗   ██╗██████╗  █████╗ ███╗   ███╗
-████╗ ████║██╔══██╗██╔══██╗██║ ██╔╝██╔═══██╗    ██╔══██╗██║   ██║██╔══██╗██╔══██╗████╗ ████║
-██╔████╔██║███████║██████╔╝█████╔╝ ██║   ██║    ███████║██║   ██║██████╔╝███████║██╔████╔██║
-██║╚██╔╝██║██╔══██║██╔══██╗██╔═██╗ ██║   ██║    ██╔══██║╚██╗ ██╔╝██╔══██╗██╔══██║██║╚██╔╝██║
-██║ ╚═╝ ██║██║  ██║██║  ██║██║  ██╗╚██████╔╝    ██║  ██║ ╚████╔╝ ██║  ██║██║  ██║██║ ╚═╝ ██║
-╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝     ╚═╝  ╚═╝  ╚═══╝  ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝     ╚═╝
-</div>`;
+  // AVRAMARE wordmark — the ASCII brand mark for the landing screen.
+  const wordmark = ` █████╗ ██╗   ██╗██████╗  █████╗ ███╗   ███╗ █████╗ ██████╗ ███████╗
+██╔══██╗██║   ██║██╔══██╗██╔══██╗████╗ ████║██╔══██╗██╔══██╗██╔════╝
+███████║██║   ██║██████╔╝███████║██╔████╔██║███████║██████╔╝█████╗
+██╔══██║╚██╗ ██╔╝██╔══██╗██╔══██║██║╚██╔╝██║██╔══██║██╔══██╗██╔══╝
+██║  ██║ ╚████╔╝ ██║  ██║██║  ██║██║ ╚═╝ ██║██║  ██║██║  ██║███████╗
+╚═╝  ╚═╝  ╚═══╝  ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝`;
 
-  return `
-${bannerTop}
+  const rule = '─'.repeat(68);
+  const tagline =
+    '   QA ENGINEER  ·  I BREAK SOFTWARE FOR A LIVING  ·  SARAJEVO, BA';
 
-<div style="margin-top: 0.5em; font-size: 1em; align-items: center; display: inline-flex;">
-I live at the crossroads of user experience and system failure. Often stress the backend, poke the UI and automate the chaos so your users never have to experience it.
-</div>
+  const desktopBrand = `<span class="term-dim">avramare :: portfolio.sys ....................... [ ok ]</span>
 
-<div style="font-size: 1em;">
-Hi there! Here are some commands to get you started:
+<span class="term-host">${wordmark}</span>
 
-$ about - learn more about me
-$ sum - short summary display
-$ resume -  download my resume
-$ help - list of available commands
-</div>
+<span class="term-dim">${rule}</span>
+<span class="term-user">${tagline}</span>
+<span class="term-dim">${rule}</span>`;
+
+  const mobileBrand = `<span class="term-dim">avramare :: portfolio.sys [ ok ]</span>
+
+<span class="term-host" style="font-size:1.6em;font-weight:bold;letter-spacing:.3em;">AVRAMARE</span>
+<span class="term-dim">${'─'.repeat(22)}</span>
+<span class="term-user">QA ENGINEER · SARAJEVO</span>`;
+
+  return `${isMobile ? mobileBrand : desktopBrand}
+
+I live at the crossroads of user experience and system failure. I stress the
+backend, poke the UI, and automate the chaos so your users never have to.
+
+Type a command to get started:
+
+<span class="term-host">$ about</span>   learn more about me
+<span class="term-host">$ sum</span>     a short summary
+<span class="term-host">$ resume</span>  download my resume
+<span class="term-host">$ help</span>    list every command
+
+<span class="term-dim">tip: double-click a desktop icon, or switch themes from the View menu.</span>
 `;
 };
 

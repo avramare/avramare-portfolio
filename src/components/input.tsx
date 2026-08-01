@@ -91,8 +91,10 @@ export const Input = ({
     setCommand(value);
   };
 
+  const invalid = !(commandExists(command) || command === '');
+
   return (
-    <div className="flex flex-row space-x-2">
+    <div className="flex flex-row">
       <label htmlFor="prompt" className="flex-shrink">
         <Ps1 />
       </label>
@@ -101,11 +103,7 @@ export const Input = ({
         ref={inputRef}
         id="prompt"
         type="text"
-        className={`bg-light-background dark:bg-dark-background focus:outline-none flex-grow ${
-          commandExists(command) || command === ''
-            ? 'text-dark-green'
-            : 'text-dark-red'
-        }`}
+        className={`term-input${invalid ? ' invalid' : ''}`}
         value={command}
         onChange={onChange}
         autoFocus
