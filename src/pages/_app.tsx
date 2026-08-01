@@ -2,51 +2,47 @@ import React from 'react';
 import '../styles/global.css';
 import Head from 'next/head';
 import type { AppProps } from 'next/app';
-import config from '../../config.json';
+import { ThemeProvider, useTheme } from '../components/ui/theme';
+import { DesktopIcons } from '../components/ui/DesktopIcons';
+
+const Desktop: React.FC<{
+  onClick: () => void;
+  children: React.ReactNode;
+}> = ({ onClick, children }) => {
+  const { scheme, phosphor } = useTheme();
+  return (
+    <div
+      className="win-desktop"
+      data-scheme={scheme}
+      data-phosphor={phosphor}
+      onMouseDown={onClick}
+    >
+      <DesktopIcons />
+      {children}
+    </div>
+  );
+};
 
 const App = ({ Component, pageProps }: AppProps) => {
   const inputRef = React.useRef<HTMLInputElement>(null);
 
-  const onClickAnywhere = () => {
+  const focusInput = () => {
     inputRef.current?.focus();
   };
 
   return (
-    <>
+    <ThemeProvider>
       <Head>
-        {/* maximum-scale="1" removed: invalid JSX prop (must go in content string) and blocks user zoom (WCAG 1.4.4) */}
         <meta
           name="viewport"
           content="initial-scale=1.0, width=device-width"
           key="viewport"
         />
       </Head>
-
-      <div
-        className="terminal-desktop text-xs md:text-base text-light-foreground dark:text-dark-foreground"
-        onClick={onClickAnywhere}
-      >
-        <main className="w-full h-full flex items-center justify-center p-0 md:p-6">
-          <div className="terminal-window w-full h-full md:max-w-6xl md:h-[93vh] flex flex-col md:rounded-xl overflow-hidden">
-            <div className="terminal-titlebar flex items-center px-4 py-2.5 shrink-0">
-              <div className="flex items-center space-x-2">
-                <div className="traffic-red w-3 h-3 rounded-full" />
-                <div className="traffic-yellow w-3 h-3 rounded-full" />
-                <div className="traffic-green w-3 h-3 rounded-full" />
-              </div>
-              <div className="flex-1 text-center text-xs terminal-title-text">
-                {config.ps1_username}@{config.ps1_hostname}: ~
-              </div>
-              <div className="w-14" />
-            </div>
-
-            <div className="flex-1 overflow-hidden bg-light-background dark:bg-dark-background">
-              <Component {...pageProps} inputRef={inputRef} />
-            </div>
-          </div>
-        </main>
-      </div>
-    </>
+      <Desktop onClick={focusInput}>
+        <Component {...pageProps} inputRef={inputRef} />
+      </Desktop>
+    </ThemeProvider>
   );
 };
 

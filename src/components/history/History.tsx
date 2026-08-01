@@ -7,23 +7,27 @@ export const History: React.FC<{ history: Array<HistoryInterface> }> = ({
 }) => {
   return (
     <>
-      {history.map((entry: HistoryInterface, index: number) => (
-        <div key={entry.command + index}>
-          <div className="flex flex-row space-x-2">
-            <div className="flex-shrink">
-              <Ps1 />
-            </div>
+      {history.map((entry: HistoryInterface, index: number) => {
+        const isError = entry.output.startsWith('shell: command not found');
+        return (
+          <div key={entry.command + index} className="mb-2">
+            {entry.command !== '' && (
+              <div className="flex flex-row">
+                <div className="flex-shrink">
+                  <Ps1 />
+                </div>
+                <div className="flex-grow term-ok">{entry.command}</div>
+              </div>
+            )}
 
-            <div className="flex-grow">{entry.command}</div>
+            <p
+              className={`whitespace-pre-wrap ${isError ? 'term-error' : 'term-ok'}`}
+              style={{ lineHeight: 'normal' }}
+              dangerouslySetInnerHTML={{ __html: entry.output }}
+            />
           </div>
-
-          <p
-            className="whitespace-pre-wrap mb-2"
-            style={{ lineHeight: 'normal' }}
-            dangerouslySetInnerHTML={{ __html: entry.output }}
-          />
-        </div>
-      ))}
+        );
+      })}
     </>
   );
 };
